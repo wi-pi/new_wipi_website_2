@@ -1,4 +1,4 @@
-# WI-PI Website
+# NEW WI-PI Website
 
 Wisconsin Privacy and Security Group website built with [Astro](https://astro.build/).
 
@@ -278,3 +278,4 @@ Site URL: `https://wi-pi.github.io/new_wipi_website/`
 - Vanilla CSS with CSS variables
 - Vanilla JavaScript for interactivity
 - GitHub Actions for CI/CD
+
