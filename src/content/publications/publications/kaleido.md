@@ -1,0 +1,11 @@
+---
+title: 'Kaleido: Real-Time Privacy Control for Eye-Tracking Systems'
+authors: 'Jingjie Li, Amrita Roy Chowdhury, Kassem Fawaz, Younghyun Kim'
+type: 'Conference'
+year: 2021
+venue: 'USENIX Security 2021'
+pdfUrl: ''
+link: 'https://www.usenix.org/conference/usenixsecurity21/presentation/li-jingjie'
+focus: ['people', 'systems']
+---
+Recent advances in sensing and computing technologies have led to the rise of eye-tracking platforms. Ranging from mobiles to high-end mixed reality headsets, a wide spectrum of interactive systems now employs eye-tracking. However, eye gaze data is a rich source of sensitive information that can reveal an individual's physiological and psychological traits. Prior approaches to protecting eye-tracking data suffer from two major drawbacks: they are either incompatible with the current eye-tracking ecosystem or provide no formal privacy guarantee. In this paper, we propose Kalεido, an eye-tracking data processing system that (1) provides a formal privacy guarantee, (2) integrates seamlessly with existing eye-tracking ecosystems, and (3) operates in real-time. Kalεido acts as an intermediary protection layer in the software stack of eye-tracking systems. We conduct a comprehensive user study and trace-based analysis to evaluate Kalεido. Our user study shows that the users enjoy a satisfactory level of utility from Kalεido. Additionally, we present empirical evidence of Kalεido's effectiveness in thwarting real-world attacks on eye-tracking data.

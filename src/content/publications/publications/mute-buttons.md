@@ -1,0 +1,11 @@
+---
+title: 'Are You Really Muted?: A Privacy Analysis of Mute Buttons in Video Conferencing Apps'
+authors: 'Yucheng Yang, Jack West, George K. Thiruvathukal, Neil Klingensmith, Kassem Fawaz'
+type: 'Conference'
+year: 2022
+venue: 'PETS 2022'
+pdfUrl: 'https://arxiv.org/pdf/2204.06128'
+link: 'https://arxiv.org/abs/2204.06128'
+focus: ['people', 'systems']
+---
+Video conferencing apps (VCAs) make it possible for previously private spaces -- bedrooms, living rooms, and kitchens -- into semi-public extensions of the office. For the most part, users have accepted these apps in their personal space without much thought about the permission models that govern the use of their private data during meetings. While access to a device's video camera is carefully controlled, little has been done to ensure the same level of privacy for accessing the microphone. In this work, we ask the question: what happens to the microphone data when a user clicks the mute button in a VCA? We first conduct a user study to analyze users' understanding of the permission model of the mute button. Then, using runtime binary analysis tools, we trace raw audio flow in many popular VCAs as it traverses the app from the audio driver to the network. We find fragmented policies for dealing with microphone data among VCAs -- some continuously monitor the microphone input during mute, and others do so periodically. One app transmits statistics of the audio to its telemetry servers while the app is muted. Using network traffic that we intercept en route to the telemetry server, we implement a proof-of-concept background activity classifier and demonstrate the feasibility of inferring the ongoing background activity during a meeting -- cooking, cleaning, typing, etc. We achieved 81.9% macro accuracy on identifying six common background activities using intercepted outgoing telemetry packets when a user is muted.

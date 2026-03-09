@@ -1,0 +1,77 @@
+---
+// Footer data - inline to avoid file system issues at build time
+const base = import.meta.env.BASE_URL;
+
+const footerContent = {
+  labName: 'WI-PI Lab',
+  tagline: 'Wisconsin Privacy and Security Group',
+  email: 'wipi@ece.wisc.edu',
+  address: 'EH 3556, 1415 Engineering Dr, Madison, WI 53706',
+  copyrightOwner: 'Wisconsin Privacy and Security Group'
+};
+
+const navLinks = [
+  { href: base, label: 'Home' },
+  { href: `${base}students`, label: 'Students' },
+  { href: `${base}news`, label: 'News' },
+  { href: `${base}publications`, label: 'Publications' },
+  { href: `${base}slides`, label: 'Artifacts' },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__accent-line"></div>
+  
+  <div class="footer__container">
+    <div class="footer__grid">
+      <!-- Branding Column -->
+      <div class="footer__brand">
+        <a href={base} class="footer__logo-link">
+          <h3 class="footer__title">{footerContent.labName}</h3>
+        </a>
+        <p class="footer__tagline">{footerContent.tagline}</p>
+        <a href="https://www.wisc.edu" target="_blank" rel="noopener noreferrer" class="footer__university">
+          University of Wisconsin-Madison
+        </a>
+      </div>
+
+      <!-- Navigation Column -->
+      <div class="footer__nav">
+        <h4 class="footer__section-title">Quick Links</h4>
+        <nav class="footer__links">
+          {navLinks.map(link => (
+            <a href={link.href} class="footer__link">{link.label}</a>
+          ))}
+        </nav>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer__contact">
+        <h4 class="footer__section-title">Contact</h4>
+        <div class="footer__contact-items">
+          <a href={`mailto:${footerContent.email}`} class="footer__contact-item">
+            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>{footerContent.email}</span>
+          </a>
+          <div class="footer__contact-item">
+            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>{footerContent.address}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer__bottom">
+      <p class="footer__copyright">© {currentYear} {footerContent.copyrightOwner}</p>
+    </div>
+  </div>
+</footer>

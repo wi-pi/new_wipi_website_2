@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+const projects = await getCollection('projects');
+// Sort by year in descending order (latest first), then by title for items without year
+const sortedProjects = projects.sort((a, b) => {
+  const yearA = a.data.year || 0;
+  const yearB = b.data.year || 0;
+  if (yearB !== yearA) {
+    return yearB - yearA; // Descending order
+  }
+  // If years are equal (or both 0), sort alphabetically by title
+  return a.data.title.localeCompare(b.data.title);
+});
+
+const focusOptions = [
+  { key: 'all', label: 'All' },
+  { key: 'systems', label: 'Systems' },
+  { key: 'people', label: 'People' },
+  { key: 'math', label: 'Math' },
+  { key: 'ai', label: 'AI' },
+];
+
+const focusLabelMap: Record<string, string> = {
+  systems: 'Systems',
+  people: 'People',
+  math: 'Math',
+  ai: 'AI',
+};
+
+// Helper to resolve asset URLs with base path
+function resolveUrl(url: string | undefined): string | undefined {
+  if (!url) return undefined;
+  // If it starts with /, prepend base (removing trailing slash from base to avoid double slashes)
+  if (url.startsWith('/')) {
+    return base.replace(/\/$/, '') + url;
+  }
+  return url;
+}
+---
+
+<BaseLayout title="Artifacts" includeFooter={true}>
+  <main class="slides-page">
+    <div class="slides-page__header">
+      <h1 class="slides-page__heading">Slides & Code</h1>
+      <p class="slides-page__subtitle">Presentation materials and open-source code from our research</p>
+    </div>
+    
+    <div class="slides-page__container">
+      <!-- Focus Filter -->
+      <div class="filter-section">
+        <div class="filter-label">Filter by research focus</div>
+        <div class="filter-container" id="focus-filter">
+          {focusOptions.map((opt) => (
+            <button 
+              class={`filter-btn ${opt.key === 'all' ? 'active' : ''}`}
+              data-focus={opt.key}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+        {sortedProjects.map((proj, index) => (
+          <div 
+            class="project-card"
+            data-focus={JSON.stringify(proj.data.focus)}
+            data-index={index}
+            style={`--project-index: ${index}`}
+          >
+            <div class="project-card__title-row">
+              <h3 class="project-card__title">
+                {proj.data.link ? (
+                  <a href={proj.data.link} target="_blank" rel="noopener noreferrer">
+                    {proj.data.title}
+                  </a>
+                ) : (
+                  proj.data.title
+                )}
+              </h3>
+            </div>
+
+            <div class="project-card__meta-row">
+              <div class="project-card__authors">{proj.data.authors}</div>
+              {(proj.data.year || proj.data.venue) && (
+                <span class="project-card__venue">
+                  {[proj.data.venue, proj.data.year].filter(Boolean).join(', ')}
+                </span>
+              )}
+            </div>
+
+            <div class="project-card__focus-row">
+              {proj.data.focus.map((f: string) => (
+                <span class="project-card__focus-badge">{focusLabelMap[f]}</span>
+              ))}
+            </div>
+
+            <p class="project-card__abstract" data-abstract={index}>
+              {proj.body}
+            </p>
+
+            <div class="project-card__btn-row">
+              {proj.data.slidesUrl && (
+                <a 
+                  class="btn-primary" 
+                  href={resolveUrl(proj.data.slidesUrl)}
+                  download
+                  title="Download Slides"
+                >
+                  Download Slides
+                </a>
+              )}
+
+              {proj.data.githubUrl && (
+                <a 
+                  class="icon-link"
+                  href={proj.data.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="View on GitHub"
+                >
+                  <img 
+                    class="icon-link__img"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                    alt="GitHub"
+                  />
+                </a>
+              )}
+
+              {proj.data.huggingFaceUrl && (
+                <a 
+                  class="icon-link"
+                  href={proj.data.huggingFaceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="View on Hugging Face"
+                >
+                  <img 
+                    class="icon-link__img"
+                    src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+                    alt="Hugging Face"
+                  />
+                </a>
+              )}
+
+              <button class="btn-abstract-toggle" data-toggle-abstract={index}>
+                Show Abstract ▼
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+
+</BaseLayout>
+
+<script>
+  // Filter functionality
+  const focusButtons = document.querySelectorAll('#focus-filter .filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  let activeFocus = 'all';
+
+  function filterCards() {
+    projectCards.forEach(card => {
+      const cardFocus = JSON.parse(card.getAttribute('data-focus') || '[]');
+      const focusMatch = activeFocus === 'all' || cardFocus.includes(activeFocus);
+      (card as HTMLElement).style.display = focusMatch ? 'flex' : 'none';
+    });
+  }
+
+  focusButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      focusButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFocus = btn.getAttribute('data-focus') || 'all';
+      filterCards();
+    });
+  });
+
+  // Abstract toggle
+  const abstractToggles = document.querySelectorAll('[data-toggle-abstract]');
+  abstractToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const index = btn.getAttribute('data-toggle-abstract');
+      const abstract = document.querySelector(`[data-abstract="${index}"]`);
+      
+      if (abstract?.classList.contains('expanded')) {
+        abstract.classList.remove('expanded');
+        btn.textContent = 'Show Abstract ▼';
+      } else {
+        abstract?.classList.add('expanded');
+        btn.textContent = 'Hide Abstract ▲';
+      }
+    });
+  });
+
+</script>
+
