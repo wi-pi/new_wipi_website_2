@@ -3,7 +3,7 @@ title: 'Experimental Security Analysis of the App Model in Business Collaboratio
 authors: 'Yunang Chen, Yue Gao, Nick Ceccio, Rahul Chatterjee, Kassem Fawaz, Earlence Fernandes'
 type: 'Conference'
 year: 2022
-venue: 'USENIX Security 2022'
+venue: 'USENIX Security'
 pdfUrl: ''
 link: 'https://www.usenix.org/conference/usenixsecurity22/presentation/chen-yunang-experimental'
 focus: ['systems']

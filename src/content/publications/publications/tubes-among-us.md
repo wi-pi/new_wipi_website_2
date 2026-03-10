@@ -3,7 +3,7 @@ title: 'Tubes Among Us: Analog Attack on Automatic Speaker Identification'
 authors: 'Shimaa Ahmed, Yash Wani, Ali Shahin Shamsabadi, Mohammad Yaghini, Ilia Shumailov, Nicolas Papernot, Kassem Fawaz'
 type: 'Conference'
 year: 2023
-venue: 'USENIX Security 2023'
+venue: 'USENIX Security'
 pdfUrl: 'https://arxiv.org/pdf/2202.02751'
 link: 'https://www.usenix.org/conference/usenixsecurity23/presentation/ahmed-shimaa'
 focus: ['ai', 'systems']

@@ -3,7 +3,7 @@ title: 'Unpacking Privacy Labels: A Measurement and Developer Perspective on Goo
 authors: 'Rishabh Khandelwal, Asmit Nayak, Paul Chung, Kassem Fawaz'
 type: 'Conference'
 year: 2024
-venue: 'USENIX Security 2024'
+venue: 'USENIX Security'
 pdfUrl: 'https://www.usenix.org/system/files/usenixsecurity24-khandelwal.pdf'
 link: 'https://www.usenix.org/conference/usenixsecurity24/presentation/khandelwal'
 focus: ['people', 'systems']

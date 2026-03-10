@@ -3,7 +3,7 @@ title: 'Towards More Robust Keyword Spotting for Voice Assistants'
 authors: 'Shimaa Ahmed, Ilia Shumailov, Nicolas Papernot, Kassem Fawaz'
 type: 'Conference'
 year: 2022
-venue: 'USENIX Security 2022'
+venue: 'USENIX Security'
 pdfUrl: 'https://www.usenix.org/system/files/sec22-ahmed.pdf'
 link: 'https://www.usenix.org/conference/usenixsecurity22/presentation/ahmed'
 focus: ['ai', 'systems']

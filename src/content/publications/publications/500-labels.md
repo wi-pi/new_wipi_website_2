@@ -3,7 +3,7 @@ title: 'A picture is worth 500 labels: A case study of demographic disparities i
 authors: 'Jack West, Lea Thiemt, Shimaa Ahmed, Maggie Bartig, Kassem Fawaz, Suman Banerjee'
 type: 'Conference'  # Options: Conference, Journal, Dissertation, Patent, arXiv
 year: 2024
-venue: '2024 IEEE Symposium on Security and Privacy'
+venue: 'IEEE Symposium on Security and Privacy'
 pdfUrl: 'https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10646743'  # Optional - put PDF in public/pdfs/
 link: 'https://ieeexplore.ieee.org/abstract/document/10646743'  # Optional - makes title clickable
 bibtex: |  # Optional - custom BibTeX entry (use | for multiline)

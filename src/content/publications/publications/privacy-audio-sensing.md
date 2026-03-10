@@ -3,7 +3,7 @@ title: 'Privacy Protection for Audio Sensing Against Multi-Microphone Adversarie
 authors: 'Chuhan Gao, Kassem Fawaz, Sanjib Sur, Suman Banerjee'
 type: 'Conference'
 year: 2019
-venue: 'PETS 2019'
+venue: 'PETS'
 pdfUrl: 'https://petsymposium.org/popets/2019/popets-2019-0024.pdf'
 link: 'https://petsymposium.org/popets/2019/popets-2019-0024.php'
 focus: ['systems', 'people']

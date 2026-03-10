@@ -3,7 +3,7 @@ title: 'Fairness Properties of Face Recognition and Obfuscation Systems'
 authors: 'Harrison Rosenberg, Brian Tang, Kassem Fawaz, Somesh Jha'
 type: 'Conference'
 year: 2023
-venue: 'USENIX Security 2023'
+venue: 'USENIX Security'
 pdfUrl: 'https://www.usenix.org/system/files/usenixsecurity23-rosenberg.pdf'
 link: 'https://www.usenix.org/conference/usenixsecurity23/presentation/rosenberg'
 focus: ['ai', 'people']

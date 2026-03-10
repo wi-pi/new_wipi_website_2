@@ -3,7 +3,7 @@ title: 'Face-Off: Adversarial Face Obfuscation'
 authors: 'Varun Chandrasekaran, Chuhan Gao, Brian Tang, Kassem Fawaz, Somesh Jha, Suman Banerjee'
 type: 'Conference'
 year: 2021
-venue: 'PoPETS 2021'
+venue: 'PoPETS'
 pdfUrl: 'https://petsymposium.org/popets/2021/popets-2021-0032.pdf'
 link: 'https://arxiv.org/abs/2003.08861'
 focus: ['ai', 'people']

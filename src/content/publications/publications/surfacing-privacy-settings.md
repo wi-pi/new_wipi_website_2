@@ -3,7 +3,7 @@ title: 'Surfacing Privacy Settings Using Semantic Matching'
 authors: 'Rishabh Khandelwal, Asmit Nayak, Yao Yao, Kassem Fawaz'
 type: 'Conference'
 year: 2020
-venue: 'PrivateNLP@EMNLP 2020'
+venue: 'PrivateNLP@EMNLP'
 pdfUrl: 'https://aclanthology.org/2020.privatenlp-1.4.pdf'
 link: 'https://aclanthology.org/2020.privatenlp-1.4/'
 focus: ['people', 'ai']

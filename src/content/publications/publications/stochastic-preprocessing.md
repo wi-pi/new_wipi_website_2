@@ -3,7 +3,7 @@ title: 'On the Limitations of Stochastic Pre-processing Defenses'
 authors: 'Yue Gao, Ilia Shumailov, Kassem Fawaz, Nicolas Papernot'
 type: 'Conference'
 year: 2022
-venue: 'NeurIPS 2022'
+venue: 'NeurIPS'
 pdfUrl: 'https://proceedings.neurips.cc/paper_files/paper/2022/file/997089469acbeb410405e43f0011be1f-Paper-Conference.pdf'
 link: 'https://openreview.net/forum?id=P_eBjUlzlV'
 focus: ['ai', 'math']

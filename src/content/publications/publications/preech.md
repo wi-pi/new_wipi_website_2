@@ -3,7 +3,7 @@ title: 'Preech: A System for Privacy-Preserving Speech Transcription'
 authors: 'Shimaa Ahmed, Amrita Roy Chowdhury, Kassem Fawaz, Parmesh Ramanathan'
 type: 'Conference'
 year: 2020
-venue: 'USENIX Security 2020'
+venue: 'USENIX Security'
 pdfUrl: 'https://www.usenix.org/system/files/sec20-ahmed-shimaa.pdf'
 link: 'https://www.usenix.org/conference/usenixsecurity20/presentation/ahmed-shimaa'
 focus: ['ai', 'systems', 'people']

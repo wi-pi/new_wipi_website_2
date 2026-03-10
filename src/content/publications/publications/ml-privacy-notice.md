@@ -3,7 +3,7 @@ title: 'The Applications of Machine Learning in Privacy Notice and Choice'
 authors: 'Kassem Fawaz, Thomas Linden, Hamza Harkous'
 type: 'Conference'
 year: 2019
-venue: 'COMSNETS 2019'
+venue: 'COMSNETS'
 pdfUrl: ''
 link: ''
 focus: ['people', 'ai']

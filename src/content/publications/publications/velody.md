@@ -3,7 +3,7 @@ title: 'Velody: Nonlinear Vibration Challenge-Response for Resilient User Authen
 authors: 'Jingjie Li, Kassem Fawaz, Younghyun Kim'
 type: 'Conference'
 year: 2019
-venue: 'ACM CCS 2019'
+venue: 'ACM CCS'
 pdfUrl: 'https://par.nsf.gov/servlets/purl/10156906'
 link: 'https://dl.acm.org/doi/10.1145/3319535.3354242'
 focus: ['systems']

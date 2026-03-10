@@ -3,7 +3,7 @@ title: 'Automated Cookie Notice Analysis and Enforcement'
 authors: 'Rishabh Khandelwal, Asmit Nayak, Hamza Harkous, Kassem Fawaz'
 type: 'Conference'
 year: 2023
-venue: 'USENIX Security 2023'
+venue: 'USENIX Security'
 pdfUrl: 'https://www.usenix.org/system/files/sec23fall-prepub-389-khandelwal.pdf'
 link: 'https://www.usenix.org/conference/usenixsecurity23/presentation/khandelwal'
 focus: ['people', 'systems']
