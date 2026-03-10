@@ -65,7 +65,7 @@ interface Person {
           <h2 class="students-page__section-title">Principal Investigator</h2>
           <div class="students-page__section-line"></div>
         </div>
-        <div class="students-page__grid">
+        <div class="students-page__grid students-page__grid--center">
           {professor.map((person: Person, index: number) => (
             <div class="person" style={`--person-index: ${index}`}>
               <a href={person.link} target="_blank" rel="noreferrer" class="person__link">

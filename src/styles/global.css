@@ -935,6 +935,12 @@ a.footer__contact-item:hover .footer__icon {
   justify-items: center;
 }
 
+.students-page__grid--center {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem 2rem;
+}
+
 @media (max-width: 1024px) {
   .students-page__grid {
     grid-template-columns: repeat(3, 1fr);
