@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
+const base = import.meta.env.BASE_URL;
+
 const publications = await getCollection('publications');
 
 function getPublicationSortTimestamp(publication: (typeof publications)[number]) {
@@ -14,6 +16,18 @@ function getPublicationSortTimestamp(publication: (typeof publications)[number])
   }
 
   return 0;
+}
+
+function getPublicationYear(publication: (typeof publications)[number]) {
+  if (publication.data.year) {
+    return publication.data.year;
+  }
+
+  if (publication.data.publishDate) {
+    return publication.data.publishDate.getFullYear();
+  }
+
+  return undefined;
 }
 
 // Sort by published date in descending order (latest first), then fall back to title.
@@ -84,7 +98,10 @@ const focusLabelMap: Record<string, string> = {
 
       <!-- Publications Grid -->
       <div class="publications-grid" id="publications-grid">
-        {sortedPublications.map((pub, index) => (
+        {sortedPublications.map((pub, index) => {
+          const displayYear = getPublicationYear(pub);
+
+          return (
           <div 
             class="pub-card"
             data-type={pub.data.type}
@@ -107,9 +124,9 @@ const focusLabelMap: Record<string, string> = {
 
             <div class="pub-card__meta-row">
               <div class="pub-card__authors">{pub.data.authors}</div>
-              {(pub.data.year || pub.data.venue) && (
+              {(displayYear || pub.data.venue) && (
                 <span class="pub-card__venue">
-                  {[pub.data.venue, pub.data.year].filter(Boolean).join(', ')}
+                  {[pub.data.venue, displayYear].filter(Boolean).join(', ')}
                 </span>
               )}
             </div>
@@ -126,21 +143,91 @@ const focusLabelMap: Record<string, string> = {
 
             <div class="pub-card__btn-row">
               {pub.data.pdfUrl && (
-                <button 
-                  class="btn-primary" 
-                  data-pdf={pub.data.pdfUrl}
-                  data-title={pub.data.title}
-                  title="Open PDF"
+                <a
+                  class="btn-primary"
+                  href={pub.data.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open PDF in new tab"
                 >
                   PDF
-                </button>
+                </a>
               )}
+
+              {pub.data.projectUrl && (
+                <a
+                  class="icon-link"
+                  href={pub.data.projectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Project website"
+                  title="Project website"
+                >
+                  <img
+                      class="icon-link__img"
+                      src={`${base}images/website.svg`}
+                      alt="Slides"
+                  />
+                </a>
+              )}
+
+              {pub.data.githubUrl && (
+                <a
+                  class="icon-link"
+                  href={pub.data.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub repository"
+                  title="GitHub repository"
+                >
+                  <img
+                    class="icon-link__img"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                    alt="GitHub"
+                  />
+                </a>
+              )}
+
+              {pub.data.huggingFaceUrl && (
+                <a
+                  class="icon-link"
+                  href={pub.data.huggingFaceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Hugging Face page"
+                  title="Hugging Face page"
+                >
+                  <img
+                    class="icon-link__img"
+                    src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+                    alt="Hugging Face"
+                  />
+                </a>
+              )}
+
+              {pub.data.slidesUrl && (
+                <a
+                  class="icon-link"
+                  href={pub.data.slidesUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download slides"
+                  title="Download slides"
+                >
+                  <img
+                    class="icon-link__img"
+                    src={`${base}images/powerpoint.svg`}
+                    alt="Slides"
+                  />
+                </a>
+              )}
+
               <button 
                 class="btn-ghost"
                 data-cite
                 data-cite-bibtex={pub.data.bibtex || ''}
                 data-cite-authors={pub.data.authors}
-                data-cite-year={pub.data.year || ''}
+                data-cite-year={displayYear?.toString() || ''}
                 data-cite-title={pub.data.title}
                 data-cite-venue={pub.data.venue || ''}
                 data-cite-type={pub.data.type}
@@ -152,26 +239,10 @@ const focusLabelMap: Record<string, string> = {
               </button>
             </div>
           </div>
-        ))}
+        );})}
       </div>
     </div>
   </main>
-
-  <!-- PDF Modal -->
-  <div class="modal-backdrop" id="pdf-modal">
-    <div class="modal-dialog">
-      <div class="modal-header">
-        <h4 class="modal-title">PDF</h4>
-        <button class="modal-close" data-close-modal>×</button>
-      </div>
-      <div class="modal-body">
-        <iframe class="modal-pdf-frame" id="pdf-frame" src="" title="PDF Viewer"></iframe>
-        <a class="modal-pdf-link" id="pdf-link" href="" target="_blank" rel="noopener noreferrer">
-          Open PDF in new tab
-        </a>
-      </div>
-    </div>
-  </div>
 
   <!-- Cite Modal -->
   <div class="modal-backdrop" id="cite-modal">
@@ -277,22 +348,6 @@ const focusLabelMap: Record<string, string> = {
     });
   });
 
-  // PDF Modal
-  const pdfModal = document.getElementById('pdf-modal');
-  const pdfFrame = document.getElementById('pdf-frame') as HTMLIFrameElement;
-  const pdfLink = document.getElementById('pdf-link') as HTMLAnchorElement;
-
-  document.querySelectorAll('[data-pdf]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const pdfUrl = btn.getAttribute('data-pdf');
-      if (pdfUrl && pdfModal && pdfFrame && pdfLink) {
-        pdfFrame.src = pdfUrl;
-        pdfLink.href = pdfUrl;
-        pdfModal.classList.add('open');
-      }
-    });
-  });
-
   // Cite Modal
   const citeModal = document.getElementById('cite-modal');
   const citeText = document.getElementById('cite-text');
@@ -387,18 +442,15 @@ const focusLabelMap: Record<string, string> = {
   // Close modals
   document.querySelectorAll('[data-close-modal]').forEach(btn => {
     btn.addEventListener('click', () => {
-      pdfModal?.classList.remove('open');
       citeModal?.classList.remove('open');
-      if (pdfFrame) pdfFrame.src = '';
     });
   });
 
   // Close modal on backdrop click
-  [pdfModal, citeModal].forEach(modal => {
+  [citeModal].forEach(modal => {
     modal?.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.classList.remove('open');
-        if (pdfFrame) pdfFrame.src = '';
       }
     });
   });
@@ -406,9 +458,7 @@ const focusLabelMap: Record<string, string> = {
   // Close modal on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      pdfModal?.classList.remove('open');
       citeModal?.classList.remove('open');
-      if (pdfFrame) pdfFrame.src = '';
     }
   });
 </script>

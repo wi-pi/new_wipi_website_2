@@ -74,6 +74,10 @@ publishDate: 2024-07-01  # Optional - ISO date used for sorting within the same 
 year: 2024
 venue: 'Conference/Journal Name'
 pdfUrl: '/pdfs/your-paper.pdf'  # Optional - put PDF in public/pdfs/
+projectUrl: 'https://example.com/project'  # Optional - project website button
+githubUrl: 'https://github.com/org/repo'  # Optional - GitHub button
+huggingFaceUrl: 'https://huggingface.co/org/model'  # Optional - Hugging Face button
+slidesUrl: '/slides/your-slides.pdf'  # Optional - slides button (put file in public/slides/)
 link: 'https://example.com/paper'  # Optional - makes title clickable
 bibtex: |  # Optional - custom BibTeX entry (use | for multiline)
   @inproceedings{author2024title,
@@ -92,6 +96,7 @@ Abstract text goes here. This will be displayed as the publication description.
 - Use an ISO date like `2024-07-01` for `publishDate`
 - If `link` is provided, the title becomes a clickable link that opens in a new tab
 - If `bibtex` is provided, it will be used when clicking the "BibTeX" button. Otherwise, a BibTeX entry will be auto-generated from the publication metadata
+- If `projectUrl`, `githubUrl`, `huggingFaceUrl`, or `slidesUrl` are provided, matching buttons will appear on each publication card linking to those resources
 - Use `|` (YAML literal block scalar) for multiline bibtex entries to preserve line breaks
 
 **Focus options explained:**
