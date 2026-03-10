@@ -3,7 +3,7 @@ title: 'CONFIDANT: A Privacy Controller for Social Robots'
 authors: 'Brian Tang, Dakota Sullivan, Bengisu Cagiltay, Varun Chandrasekaran, Kassem Fawaz, Bilge Mutlu'
 type: 'Conference'
 year: 2022
-venue: 'HRI 2022'
+venue: 'HRI'
 pdfUrl: 'https://arxiv.org/pdf/2201.02712'
 link: 'https://arxiv.org/abs/2201.02712'
 focus: ['people', 'systems']

@@ -3,7 +3,7 @@ title: 'PriSEC: A Privacy Settings Enforcement Controller'
 authors: 'Rishabh Khandelwal, Thomas Linden, Hamza Harkous, Kassem Fawaz'
 type: 'Conference'
 year: 2021
-venue: 'USENIX Security 2021'
+venue: 'USENIX Security'
 pdfUrl: 'https://par.nsf.gov/servlets/purl/10216806'
 link: 'https://www.usenix.org/conference/usenixsecurity21/presentation/khandelwal'
 focus: ['people', 'systems']

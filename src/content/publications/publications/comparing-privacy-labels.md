@@ -3,7 +3,7 @@ title: 'Comparing Privacy Labels of Applications in Android and iOS'
 authors: 'Rishabh Khandelwal, Asmit Nayak, Paul Chung, Kassem Fawaz'
 type: 'Conference'
 year: 2023
-venue: 'WPES 2023'
+venue: 'WPES'
 pdfUrl: 'https://arxiv.org/pdf/2303.08213'
 link: 'https://dl.acm.org/doi/10.1145/3603216.3624967'
 focus: ['people', 'systems']

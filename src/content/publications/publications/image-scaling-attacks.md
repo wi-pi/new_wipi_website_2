@@ -3,7 +3,7 @@ title: 'Rethinking Image-Scaling Attacks: The Interplay Between Vulnerabilities 
 authors: 'Yue Gao, Ilia Shumailov, Kassem Fawaz'
 type: 'Conference'
 year: 2022
-venue: 'ICML 2022'
+venue: 'ICML'
 pdfUrl: 'https://proceedings.mlr.press/v162/gao22g/gao22g.pdf'
 link: 'https://proceedings.mlr.press/v162/gao22g.html'
 focus: ['ai', 'math']

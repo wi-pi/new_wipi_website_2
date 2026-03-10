@@ -3,7 +3,7 @@ title: 'PowerCut and Obfuscator: An Exploration of the Design Space for Privacy-
 authors: 'Varun Chandrasekaran, Suman Banerjee, Bilge Mutlu, Kassem Fawaz'
 type: 'Conference'
 year: 2021
-venue: 'SOUPS 2021'
+venue: 'SOUPS'
 pdfUrl: ''
 link: 'https://www.usenix.org/conference/soups2021/presentation/chandrasekaran'
 focus: ['people', 'systems']

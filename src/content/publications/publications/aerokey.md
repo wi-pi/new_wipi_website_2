@@ -3,7 +3,7 @@ title: 'AeroKey: Using Ambient Electromagnetic Radiation for Secure and Usable W
 authors: 'Kyuin Lee, Yucheng Yang, Omkar Prabhune, Aishwarya Lekshmi Chithra, Jack West, Kassem Fawaz, Neil Klingensmith, Suman Banerjee, Younghyun Kim'
 type: 'Conference'
 year: 2022
-venue: 'IMWUT 2022'
+venue: 'IMWUT'
 pdfUrl: ''
 link: 'https://dl.acm.org/doi/10.1145/3529514'
 focus: ['systems']

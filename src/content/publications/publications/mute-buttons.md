@@ -3,7 +3,7 @@ title: 'Are You Really Muted?: A Privacy Analysis of Mute Buttons in Video Confe
 authors: 'Yucheng Yang, Jack West, George K. Thiruvathukal, Neil Klingensmith, Kassem Fawaz'
 type: 'Conference'
 year: 2022
-venue: 'PETS 2022'
+venue: 'PETS'
 pdfUrl: 'https://arxiv.org/pdf/2204.06128'
 link: 'https://arxiv.org/abs/2204.06128'
 focus: ['people', 'systems']

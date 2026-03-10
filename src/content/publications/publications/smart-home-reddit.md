@@ -3,7 +3,7 @@ title: '"It''s up to the Consumer to be Smart": Understanding the Security and P
 authors: 'Jingjie Li, Kaiwen Sun, Brittany Huff, Anna Bierley, Younghyun Kim, Florian Schaub, Kassem Fawaz'
 type: 'Conference'
 year: 2023
-venue: 'IEEE S&P 2023'
+venue: 'IEEE S&P'
 pdfUrl: 'https://par.nsf.gov/servlets/purl/10401024'
 link: 'https://ieeexplore.ieee.org/document/10179344/'
 focus: ['people']

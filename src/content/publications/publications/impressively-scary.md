@@ -3,7 +3,7 @@ title: '"Impressively Scary:" Exploring User Perceptions and Reactions to Unrave
 authors: 'Jack West, Bengisu Cagiltay, Shirley Zhang, Jingjie Li, Kassem Fawaz, Suman Banerjee'
 type: 'Conference'  # Options: Conference, Journal, Dissertation, Patent, arXiv
 year: 2025
-venue: 'CHI 2025'
+venue: 'CHI'
 pdfUrl: 'https://dl.acm.org/doi/pdf/10.1145/3706598.3713256'  # Optional - put PDF in public/pdfs/
 link: 'https://dl.acm.org/doi/full/10.1145/3706598.3713256'  # Optional - makes title clickable
 bibtex: |  # Optional - custom BibTeX entry (use | for multiline)

@@ -3,7 +3,7 @@ title: 'The Privacy Policy Landscape After the GDPR'
 authors: 'Thomas Linden, Rishabh Khandelwal, Hamza Harkous, Kassem Fawaz'
 type: 'Conference'
 year: 2020
-venue: 'PETS 2020'
+venue: 'PETS'
 pdfUrl: 'https://petsymposium.org/popets/2020/popets-2020-0004.pdf'
 link: 'https://petsymposium.org/popets/2020/popets-2020-0004.php'
 focus: ['people']

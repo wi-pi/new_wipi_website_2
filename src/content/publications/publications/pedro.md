@@ -3,7 +3,7 @@ title: 'PEDRO: Secure Pedestrian Mobility Verification in V2P Communication usin
 authors: 'Yucheng Yang, Kyuin Lee, Younghyun Kim, Kassem Fawaz'
 type: 'Conference'
 year: 2021
-venue: 'CPSIoTSec 2021'
+venue: 'CPSIoTSec'
 pdfUrl: 'https://par.nsf.gov/servlets/purl/10310590'
 link: ''
 focus: ['systems']

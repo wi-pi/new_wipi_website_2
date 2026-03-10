@@ -3,7 +3,7 @@ title: 'Polisis: Automated Analysis and Presentation of Privacy Policies Using D
 authors: 'Hamza Harkous, Kassem Fawaz, Rémi Lebret, Florian Schaub, Kang G. Shin, Karl Aberer'
 type: 'Conference'
 year: 2018
-venue: 'USENIX Security 2018'
+venue: 'USENIX Security'
 pdfUrl: 'https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-harkous.pdf'
 link: 'https://arxiv.org/abs/1802.02561'
 focus: ['people', 'ai']

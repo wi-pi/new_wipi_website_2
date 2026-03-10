@@ -3,7 +3,7 @@ title: 'Stateful Defenses for Machine Learning Models Are Not Yet Secure Against
 authors: 'Ryan Feng, Ashish Hooda, Neal Mangaokar, Kassem Fawaz, Somesh Jha, Atul Prakash'
 type: 'Conference'
 year: 2023
-venue: 'ACM CCS 2023'
+venue: 'ACM CCS'
 pdfUrl: 'https://pages.cs.wisc.edu/~hooda/stateful-blackbox.pdf'
 link: 'https://arxiv.org/abs/2303.06280'
 focus: ['ai', 'systems']

@@ -3,7 +3,7 @@ title: 'SkillFence: A Systems Approach to Practically Mitigating Voice-Based Con
 authors: 'Ashish Hooda, Matthew Wallace, Kushal Jhunjhunwalla, Earlence Fernandes, Kassem Fawaz'
 type: 'Conference'
 year: 2022
-venue: 'ACM IMWUT 2022'
+venue: 'ACM IMWUT'
 pdfUrl: 'https://arxiv.org/pdf/2212.08738'
 link: 'https://wiscprivacy.com/publication/skillfence/'
 focus: ['systems', 'ai']

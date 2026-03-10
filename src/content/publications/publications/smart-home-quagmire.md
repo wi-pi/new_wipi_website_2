@@ -3,7 +3,7 @@ title: 'Traversing the Quagmire that is Privacy in your Smart Home'
 authors: 'Chuhan Gao, Varun Chandrasekaran, Kassem Fawaz, Suman Banerjee'
 type: 'Conference'
 year: 2018
-venue: 'IoT S&P 2018'
+venue: 'IoT S&P'
 pdfUrl: ''
 link: 'https://dl.acm.org/doi/10.1145/3229565.3229573'
 focus: ['people', 'systems']
