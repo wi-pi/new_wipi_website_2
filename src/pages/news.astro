@@ -10,9 +10,62 @@ function getYearFromDate(date: string): string {
   return match ? match[1] : 'Other';
 }
 
-// Group news by year
+// Helper to convert a "Month Year" string (e.g., "Dec 2025", "December 2025")
+// into a sortable numeric key like 202512 for descending comparisons.
+function parseMonthYearToKey(date: string): number {
+  if (!date) return 0;
+
+  const lower = date.toLowerCase();
+  const monthMap: Record<string, number> = {
+    jan: 1,
+    january: 1,
+    feb: 2,
+    february: 2,
+    mar: 3,
+    march: 3,
+    apr: 4,
+    april: 4,
+    may: 5,
+    jun: 6,
+    june: 6,
+    jul: 7,
+    july: 7,
+    aug: 8,
+    august: 8,
+    sep: 9,
+    sept: 9,
+    september: 9,
+    oct: 10,
+    october: 10,
+    nov: 11,
+    november: 11,
+    dec: 12,
+    december: 12,
+  };
+
+  const yearMatch = lower.match(/\b(20\d{2})\b/);
+  if (!yearMatch) return 0;
+  const year = Number(yearMatch[1]);
+
+  const monthMatch = lower.match(
+    /\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t|tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\b/
+  );
+  if (!monthMatch) return 0;
+  const monthToken = monthMatch[1];
+  const month = monthMap[monthToken];
+  if (!month) return 0;
+
+  return year * 100 + month;
+}
+
+// First, sort all news items by date (latest first)
+const sortedNewsItems = [...newsItems].sort(
+  (a, b) => parseMonthYearToKey(b.data.date) - parseMonthYearToKey(a.data.date)
+);
+
+// Group news by year, preserving the sorted order within each year
 const groupedByYear: Record<string, typeof newsItems> = {};
-newsItems.forEach(item => {
+sortedNewsItems.forEach((item) => {
   const year = getYearFromDate(item.data.date);
   if (!groupedByYear[year]) groupedByYear[year] = [];
   groupedByYear[year].push(item);
@@ -20,7 +73,7 @@ newsItems.forEach(item => {
 
 // Sort years (latest first)
 const sortedYears = Object.keys(groupedByYear)
-  .filter(y => y !== 'Other')
+  .filter((y) => y !== 'Other')
   .sort((a, b) => Number(b) - Number(a));
 
 if (groupedByYear['Other']) sortedYears.push('Other');
