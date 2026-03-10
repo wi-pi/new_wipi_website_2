@@ -3,6 +3,7 @@ title: 'Automatically Detecting Online Deceptive Patterns'
 authors: 'Asmit Nayak, Yash Wani, Shirley Zhang, Rishabh Khandelwal, Kassem Fawaz'
 type: 'Conference'
 publishDate: 2025-11-22
+year: 2025
 venue: 'ACM CCS'
 link: 'https://dl.acm.org/doi/10.1145/3719027.3765191'
 pdfUrl: 'https://dl.acm.org/doi/pdf/10.1145/3719027.3765191'
