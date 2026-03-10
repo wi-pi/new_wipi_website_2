@@ -3,14 +3,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const publications = await getCollection('publications');
-// Sort by year in descending order (latest first), then by title for items without year
-const sortedPublications = publications.sort((a, b) => {
-  const yearA = a.data.year || 0;
-  const yearB = b.data.year || 0;
-  if (yearB !== yearA) {
-    return yearB - yearA; // Descending order
+
+function getPublicationSortTimestamp(publication: (typeof publications)[number]) {
+  if (publication.data.publishDate) {
+    return publication.data.publishDate.getTime();
   }
-  // If years are equal (or both 0), sort alphabetically by title
+
+  if (publication.data.year) {
+    return new Date(publication.data.year, 0, 1).getTime();
+  }
+
+  return 0;
+}
+
+// Sort by published date in descending order (latest first), then fall back to title.
+const sortedPublications = [...publications].sort((a, b) => {
+  const timestampA = getPublicationSortTimestamp(a);
+  const timestampB = getPublicationSortTimestamp(b);
+
+  if (timestampB !== timestampA) {
+    return timestampB - timestampA;
+  }
+
   return a.data.title.localeCompare(b.data.title);
 });
 

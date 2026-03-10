@@ -70,6 +70,7 @@ public/
 title: 'Your Publication Title'
 authors: 'Author One, Author Two'
 type: 'Conference'  # Options: Conference, Journal, Dissertation, Patent, arXiv
+publishDate: 2024-07-01  # Optional - ISO date used for sorting within the same year
 year: 2024
 venue: 'Conference/Journal Name'
 pdfUrl: '/pdfs/your-paper.pdf'  # Optional - put PDF in public/pdfs/
@@ -87,7 +88,8 @@ Abstract text goes here. This will be displayed as the publication description.
 ```
 
 **Notes:**
-- Publications are automatically sorted by year in descending order (latest first)
+- Publications are automatically sorted by `publishDate` when available, otherwise by `year` in descending order
+- Use an ISO date like `2024-07-01` for `publishDate`
 - If `link` is provided, the title becomes a clickable link that opens in a new tab
 - If `bibtex` is provided, it will be used when clicking the "BibTeX" button. Otherwise, a BibTeX entry will be auto-generated from the publication metadata
 - Use `|` (YAML literal block scalar) for multiline bibtex entries to preserve line breaks

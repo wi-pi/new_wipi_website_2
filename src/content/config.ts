@@ -6,6 +6,7 @@ const publicationsCollection = defineCollection({
     title: z.string(),
     authors: z.string(),
     type: z.enum(['Conference', 'Journal', 'Dissertation', 'Patent', 'arXiv']),
+    publishDate: z.coerce.date().optional(),
     year: z.number().optional(),
     venue: z.string().optional(),
     pdfUrl: z.string().optional(),
