@@ -798,21 +798,34 @@ a.footer__contact-item:hover .footer__icon {
   }
 }
 
-.research__card-img {
-  width: 140px;
-  height: 140px;
-  border-radius: 12px;
-  object-fit: cover;
+.research__card-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-  padding: 0.5rem;
+  background: var(--accent-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  transition: background 0.3s ease;
+}
+
+.research__card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.research__card:hover .research__card-icon {
+  background: rgba(144, 0, 0, 0.12);
 }
 
 @media (max-width: 768px) {
-  .research__card-img {
-    width: 100%;
-    height: 160px;
-    padding: 1rem;
+  .research__card-icon {
+    width: 72px;
+    height: 72px;
+    padding: 14px;
   }
 }
 

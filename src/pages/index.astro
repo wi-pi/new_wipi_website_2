@@ -24,22 +24,143 @@ const homeData = {
   },
   researchItems: [
     {
-      img: `${base}images/research-ai.svg`,
+      icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .link { stroke-dasharray: 2 2; animation: flow 1s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -4; } }
+    .node-l1 { animation: pulse 1.5s ease-in-out infinite alternate; }
+    .node-l2 { animation: pulse 1.5s ease-in-out 0.5s infinite alternate; }
+    .node-l3 { animation: pulse 1.5s ease-in-out 1s infinite alternate; }
+    @keyframes pulse { 0% { opacity: 0.3; } 100% { opacity: 1; } }
+  </style>
+  <g stroke="currentColor" stroke-width="0.9" opacity="0.4" class="link">
+    <line x1="14" y1="26" x2="34" y2="20"/><line x1="14" y1="26" x2="34" y2="36"/><line x1="14" y1="26" x2="34" y2="52"/><line x1="14" y1="26" x2="34" y2="65"/>
+    <line x1="14" y1="40" x2="34" y2="20"/><line x1="14" y1="40" x2="34" y2="36"/><line x1="14" y1="40" x2="34" y2="52"/><line x1="14" y1="40" x2="34" y2="65"/>
+    <line x1="14" y1="54" x2="34" y2="20"/><line x1="14" y1="54" x2="34" y2="36"/><line x1="14" y1="54" x2="34" y2="52"/><line x1="14" y1="54" x2="34" y2="65"/>
+    <line x1="46" y1="20" x2="66" y2="30"/><line x1="46" y1="20" x2="66" y2="52"/>
+    <line x1="46" y1="36" x2="66" y2="30"/><line x1="46" y1="36" x2="66" y2="52"/>
+    <line x1="46" y1="52" x2="66" y2="30"/><line x1="46" y1="52" x2="66" y2="52"/>
+    <line x1="46" y1="65" x2="66" y2="30"/><line x1="46" y1="65" x2="66" y2="52"/>
+  </g>
+  <circle cx="14" cy="26" r="4.5" fill="currentColor" class="node-l1"/>
+  <circle cx="14" cy="40" r="4.5" fill="currentColor" class="node-l1"/>
+  <circle cx="14" cy="54" r="4.5" fill="currentColor" class="node-l1"/>
+  <circle cx="40" cy="20" r="5" fill="currentColor" class="node-l2"/>
+  <circle cx="40" cy="36" r="5" fill="currentColor" class="node-l2"/>
+  <circle cx="40" cy="52" r="5" fill="currentColor" class="node-l2"/>
+  <circle cx="40" cy="65" r="5" fill="currentColor" class="node-l2"/>
+  <circle cx="66" cy="30" r="6" fill="currentColor" class="node-l3"/>
+  <circle cx="66" cy="52" r="6" fill="currentColor" class="node-l3"/>
+</svg>`,
       title: 'Using AI',
       text: 'We investigate both the privacy implications of AI systems and how AI can be used to improve security and privacy tooling.'
     },
     {
-      img: `${base}images/research-systems.svg`,
+      icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .sys-link { stroke-dasharray: 3 2; animation: sys-flow 1s linear infinite; }
+    @keyframes sys-flow { to { stroke-dashoffset: -5; } }
+    .sys-n1 { animation: sys-pulse 2s ease-in-out infinite alternate; }
+    .sys-n2 { animation: sys-pulse 2s ease-in-out 0.5s infinite alternate; }
+    .sys-n3 { animation: sys-pulse 2s ease-in-out 1s infinite alternate; }
+    .sys-n4 { animation: sys-pulse 2s ease-in-out 1.5s infinite alternate; }
+    @keyframes sys-pulse { 0% { opacity: 0.25; } 100% { opacity: 1; } }
+    .sys-shield { animation: sys-glow 2.4s ease-in-out infinite alternate; }
+    @keyframes sys-glow { 0% { opacity: 0.4; } 100% { opacity: 1; } }
+  </style>
+  <!-- connections from corners to center -->
+  <line x1="14" y1="14" x2="34" y2="34" stroke-width="1.2" class="sys-link"/>
+  <line x1="66" y1="14" x2="46" y2="34" stroke-width="1.2" class="sys-link"/>
+  <line x1="14" y1="66" x2="34" y2="46" stroke-width="1.2" class="sys-link"/>
+  <line x1="66" y1="66" x2="46" y2="46" stroke-width="1.2" class="sys-link"/>
+  <!-- top-left: server -->
+  <g class="sys-n1">
+    <rect x="5" y="6" width="18" height="16" rx="2.5" stroke-width="1.5"/>
+    <line x1="5" y1="12" x2="23" y2="12" stroke-width="1"/>
+    <line x1="5" y1="17" x2="23" y2="17" stroke-width="1"/>
+    <circle cx="19" cy="9.5" r="1.2" fill="currentColor" stroke="none"/>
+    <circle cx="19" cy="14.5" r="1.2" fill="currentColor" stroke="none"/>
+    <circle cx="19" cy="19.5" r="1.2" fill="currentColor" stroke="none"/>
+  </g>
+  <!-- top-right: laptop -->
+  <g class="sys-n2">
+    <rect x="56" y="6" width="16" height="11" rx="1.5" stroke-width="1.5"/>
+    <path d="M53 19h22l-2 3H55z" stroke-width="1.5"/>
+  </g>
+  <!-- bottom-left: phone -->
+  <g class="sys-n3">
+    <rect x="8" y="56" width="11" height="18" rx="2" stroke-width="1.5"/>
+    <line x1="12" y1="71" x2="16" y2="71" stroke-width="1.2"/>
+  </g>
+  <!-- bottom-right: cloud -->
+  <g class="sys-n4">
+    <path d="M56 72h16a6 6 0 0 0 0-12h-1a8 8 0 0 0-15.5 1 5 5 0 0 0 .5 10z" stroke-width="1.5"/>
+  </g>
+  <!-- center shield -->
+  <g class="sys-shield">
+    <path d="M40 30c-5 0-9-2-12-5v14c0 8 12 14 12 14s12-6 12-14V25c-3 3-7 5-12 5z" stroke-width="1.8" fill="currentColor" fill-opacity="0.1"/>
+    <path d="M36 40l3 3 6-7" stroke-width="2" fill="none"/>
+  </g>
+</svg>`,
       title: 'In Systems',
       text: 'We study how privacy and security concerns arise in real-world systems, mobile platforms, AI, and authentication systems.'
     },
     {
-      img: `${base}images/research-people.svg`,
+      icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .ppl-center { animation: ppl-pulse 2s ease-in-out infinite alternate; }
+    .ppl-side-l { animation: ppl-pulse 2s ease-in-out 0.6s infinite alternate; }
+    .ppl-side-r { animation: ppl-pulse 2s ease-in-out 1.2s infinite alternate; }
+    @keyframes ppl-pulse { 0% { opacity: 0.2; } 100% { opacity: 1; } }
+    .ppl-check {
+      stroke-dasharray: 25;
+      stroke-dashoffset: 25;
+      animation: ppl-draw 0.7s ease-out 0.4s forwards, ppl-check-glow 2s ease-in-out 1.1s infinite alternate;
+    }
+    @keyframes ppl-draw { to { stroke-dashoffset: 0; } }
+    @keyframes ppl-check-glow { 0% { opacity: 0.55; } 100% { opacity: 1; } }
+  </style>
+  <circle cx="40" cy="22" r="9" stroke-width="1.8" class="ppl-center"/>
+  <path d="M22 58c0-9.941 8.059-18 18-18s18 8.059 18 18" stroke-width="1.8" class="ppl-center"/>
+  <circle cx="14" cy="27" r="7" stroke-width="1.4" class="ppl-side-l"/>
+  <path d="M2 56c0-6.627 5.373-12 12-12" stroke-width="1.4" class="ppl-side-l"/>
+  <circle cx="66" cy="27" r="7" stroke-width="1.4" class="ppl-side-r"/>
+  <path d="M78 56c0-6.627-5.373-12-12-12" stroke-width="1.4" class="ppl-side-r"/>
+  <path d="M32 69l5 5 12-12" stroke-width="2.2" class="ppl-check"/>
+</svg>`,
       title: 'For People',
       text: 'We focus on human-centered security and privacy, understanding how users perceive risks and how to design usable protections for robotics and mobile platforms.'
     },
     {
-      img: `${base}images/research-math.svg`,
+      icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .dp-c1 { stroke-dasharray: 4 3; animation: dp-flow 1.2s linear infinite; }
+    .dp-c2 { stroke-dasharray: 4 3; animation: dp-flow 1.2s linear 0.6s infinite; }
+    @keyframes dp-flow { to { stroke-dashoffset: -7; } }
+    .dp-a1 { animation: dp-breathe 2.4s ease-in-out infinite alternate; }
+    .dp-a2 { animation: dp-breathe 2.4s ease-in-out 1.2s infinite alternate; }
+    @keyframes dp-breathe { 0% { opacity: 0.06; } 100% { opacity: 0.2; } }
+    .dp-lbl { animation: dp-pulse 2s ease-in-out infinite alternate; }
+    .dp-lbl2 { animation: dp-pulse 2s ease-in-out 1s infinite alternate; }
+    @keyframes dp-pulse { 0% { opacity: 0.3; } 100% { opacity: 0.75; } }
+    .dp-arrow { stroke-dasharray: 2 2; animation: dp-flow 1s linear infinite; }
+  </style>
+  <!-- baseline -->
+  <line x1="2" y1="68" x2="78" y2="68" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.25"/>
+  <!-- gaussian 1: centered at x=30 -->
+  <path d="M2 68 Q8 68 13 60 Q18 50 23 40 Q27 24 30 16 Q33 24 37 40 Q42 50 47 60 Q52 68 58 68" fill="currentColor" class="dp-a1"/>
+  <path d="M2 68 Q8 68 13 60 Q18 50 23 40 Q27 24 30 16 Q33 24 37 40 Q42 50 47 60 Q52 68 58 68" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" class="dp-c1"/>
+  <!-- gaussian 2: centered at x=50, shifted right -->
+  <path d="M22 68 Q28 68 33 60 Q38 50 43 40 Q47 24 50 16 Q53 24 57 40 Q62 50 67 60 Q72 68 78 68" fill="currentColor" class="dp-a2"/>
+  <path d="M22 68 Q28 68 33 60 Q38 50 43 40 Q47 24 50 16 Q53 24 57 40 Q62 50 67 60 Q72 68 78 68" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" class="dp-c2"/>
+  <!-- epsilon arrow between peaks -->
+  <line x1="30" y1="11" x2="50" y2="11" stroke="currentColor" stroke-width="1.2" class="dp-arrow"/>
+  <path d="M48 8.5 L51 11 L48 13.5" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 8.5 L29 11 L32 13.5" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- labels -->
+  <text x="37" y="8" font-family="Georgia, serif" font-size="9" fill="currentColor" text-anchor="middle" class="dp-lbl">&#949;</text>
+  <text x="56" y="54" font-family="Georgia, serif" font-size="10" fill="currentColor" class="dp-lbl2">&#948;</text>
+</svg>`,
       title: 'Using Math',
       text: 'We use differential privacy and statistical techniques to design rigorous guarantees for data protection and privacy.'
     },
@@ -101,7 +222,7 @@ const { heroTitle, heroSubtitle, heroImages, researchItems, pi } = homeData;
       <div class="research__grid">
         {researchItems.map((item, index) => (
           <div class="research__card" style={`--card-index: ${index}`}>
-            <img src={item.img} alt={item.title} class="research__card-img" />
+            <div class="research__card-icon" set:html={item.icon} />
             <div class="research__card-content">
               <h3 class="research__card-title">{item.title}</h3>
               <p class="research__card-text">{item.text}</p>
