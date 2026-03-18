@@ -6,6 +6,7 @@ year: 2024
 venue: 'Proceedings of the AAAI Conference on Artificial Intelligence'
 pdfUrl: 'https://ojs.aaai.org/index.php/AAAI/article/view/29403/30650'  # Optional - put PDF in public/pdfs/
 link: 'https://ojs.aaai.org/index.php/AAAI/article/view/29403'  # Optional - makes title clickable
+githubUrl: https://github.com/wi-pi/Limitations_of_Face_Generation
 bibtex: |  # Optional - custom BibTeX entry (use | for multiline)
   @article{ramesh2024synthetic,
   title={Synthetic Counterfactual Faces},
